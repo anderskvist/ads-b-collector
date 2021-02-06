@@ -1,0 +1,5 @@
+client: client.c Makefile.client helper.c helper.h
+	gcc -g client.c helper.c -o client -pthread `pkg-config --libs --cflags glib-2.0 gio-2.0`
+
+client-package: client-package.tar.bz2 client.c Makefile.client helper.c helper.h
+	tar -hcjvvf client-package.tar.bz2 client-package/
